@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="b1a3bae982a3ce8cf403"/>
+  </project>
+  <file_info>
+    <file device="5CSEMA5F31C6" path="hog.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="hps0:hps_block" name="hps_block">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME hps0 HAS_SOPCINFO 1 GENERATION_ID 1684294464"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

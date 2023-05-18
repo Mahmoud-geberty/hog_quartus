@@ -1,0 +1,108 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2023  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+# Date created = 02:44:01  May 06, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		hog_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY hog
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "02:44:01  MAY 06, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.1 Lite Edition"
+set_global_assignment -name VERILOG_FILE ../de1/src/window_serializer.v
+set_global_assignment -name VERILOG_FILE ../de1/src/ext_bus.v
+set_global_assignment -name VERILOG_FILE ../de1/src/DE1_SoC_Default.v
+set_global_assignment -name SDC_FILE ../de1/other/DE1_SoC_Default.sdc
+set_global_assignment -name SOURCE_FILE ../de1/other/DE1_SoC_Default.qsf
+set_global_assignment -name PIN_FILE ../de1/other/DE1_SoC_Default.pin
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/video_sync_generator.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/vga_controller.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/VGA_Audio_0002.v
+set_global_assignment -name QIP_FILE ../de1/DE1_IP/VGA_Audio_0002.qip
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/VGA_Audio.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/SEG7_LUT_6.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/SEG7_LUT.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/Reset_Delay.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/img_index_inst.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/img_index.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/img_data_inst.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/img_data.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/I2C_Controller.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/I2C_AV_Config.v
+set_global_assignment -name VERILOG_FILE ../de1/DE1_IP/AUDIO_DAC.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/wptr_full.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/sync_w2r.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/sync_r2w.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/sync_ptr.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/rptr_empty.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/fifomem_dp.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/fifomem.v
+set_global_assignment -name VERILOG_FILE ../de1/IP/async_fifo.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/true_dual_port.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/top_wrapper.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/top.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/row_histogram.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/partial_histogram_add.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/normalization.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/norm_block.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/lin_buff.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/kernel_shiftreg.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/kernel.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/hog_orientation.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/hog_magnitude.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/hog_gradient.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/hog.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/gaussian_pyramid.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/gaussian_operator.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/gaussian_filter.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/downsample.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/detection_window.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/custom_fifo.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/cell_histogram.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/binning.v
+set_global_assignment -name VERILOG_FILE ../hog_core/src/abs.v
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL Synplify
+set_global_assignment -name EDA_LMF_FILE synplcty.lmf -section_id eda_design_synthesis
+set_global_assignment -name EDA_INPUT_DATA_FORMAT VQM -section_id eda_design_synthesis
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
