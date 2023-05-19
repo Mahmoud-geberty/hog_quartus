@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 22.1 917 linux 2023.05.16.20:34:16
+# ACDS 22.1 917 linux 2023.05.18.17:49:55
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 22.1 917 linux 2023.05.16.20:34:16
+# ACDS 22.1 917 linux 2023.05.18.17:49:55
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="hps0"
@@ -155,9 +155,10 @@ mkdir -p ./libraries/rsp_mux/
 mkdir -p ./libraries/rsp_demux/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux/
-mkdir -p ./libraries/bridge_0_avalon_slave_burst_adapter/
+mkdir -p ./libraries/hps_0_h2f_lw_axi_master_wr_limiter/
 mkdir -p ./libraries/router_002/
 mkdir -p ./libraries/router/
+mkdir -p ./libraries/bridge_0_avalon_slave_burst_adapter/
 mkdir -p ./libraries/bridge_0_avalon_slave_agent_rsp_fifo/
 mkdir -p ./libraries/bridge_0_avalon_slave_agent/
 mkdir -p ./libraries/hps_0_h2f_axi_master_agent/
@@ -165,8 +166,10 @@ mkdir -p ./libraries/bridge_0_avalon_slave_translator/
 mkdir -p ./libraries/hps_io/
 mkdir -p ./libraries/fpga_interfaces/
 mkdir -p ./libraries/rst_controller/
+mkdir -p ./libraries/mm_interconnect_1/
 mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/hps_0/
+mkdir -p ./libraries/hog_in/
 mkdir -p ./libraries/bridge_0/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
@@ -203,6 +206,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/verbosity_pkg.sv"                                            -work altera_common_sv_packages           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv"                                     -work altera_common_sv_packages           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_mm_pkg.sv"                                            -work altera_common_sv_packages           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_mm_slave_bfm.sv"                               -work border                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_interrupt_sink.sv"                             -work border                              
@@ -211,6 +215,19 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border_memory.sv"                          -work border                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border_hps_io.sv"                          -work border                              
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border.sv"                                 -work border                              
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_avalon_st_adapter.v"                  -work avalon_st_adapter                   
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_rsp_mux.sv"                           -work rsp_mux                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -work rsp_mux                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_rsp_demux.sv"                         -work rsp_demux                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_cmd_mux.sv"                           -work cmd_mux                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -work cmd_mux                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_cmd_demux.sv"                         -work cmd_demux                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv"                            -work hps_0_h2f_lw_axi_master_wr_limiter  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_reorder_memory.sv"                             -work hps_0_h2f_lw_axi_master_wr_limiter  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                     -work hps_0_h2f_lw_axi_master_wr_limiter  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                            -work hps_0_h2f_lw_axi_master_wr_limiter  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_router_002.sv"                        -work router_002                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_router.sv"                            -work router                              
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                   
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                             
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -work rsp_mux                             
@@ -248,8 +265,10 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_fpga_interfaces.sv"                               -work fpga_interfaces                     
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                   -work rst_controller                      
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                 -work rst_controller                      
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1.v"                                    -work mm_interconnect_1                   
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0.v"                                    -work mm_interconnect_0                   
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_hps_0.v"                                                -work hps_0                               
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_hog_in.v"                                               -work hog_in                              
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/hps0_bridge_0.v"                                             -work bridge_0                            
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/hps0.v"                                                                                                           
 fi

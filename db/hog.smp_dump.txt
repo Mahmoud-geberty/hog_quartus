@@ -71,6 +71,12 @@ current_state.S_DISABLE 0 0 0
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
 State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
@@ -101,6 +107,12 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
 State Machine - |DE1_SoC_Default|hps0:hps_block|hps0_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:bridge_0_avalon_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
@@ -115,30 +127,6 @@ current_state.S_READ 1 0 1
 current_state.S_WRITE 1 1 0 
 
 State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
@@ -162,103 +150,293 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
 State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[6].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
+State Machine - |DE1_SoC_Default|hps0:hps_block|hps0_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:input_pixel_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
+State Machine - |DE1_SoC_Default|hps0:hps_block|hps0_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:switch_out_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
+State Machine - |DE1_SoC_Default|hps0:hps_block|hps0_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hog_out_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+State Machine - |DE1_SoC_Default|hps0:hps_block|hps0_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hog_in_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[1].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
@@ -294,727 +472,37 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
@@ -1140,511 +628,31 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[6].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
 Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
 current_state.S_DISABLE 0 0 0 
 current_state.S_READ 1 0 1 
 current_state.S_PAUSE 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[6].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
@@ -1752,31 +760,265 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
 State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[1].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
-Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
-current_state.S_DISABLE 0 0 0 
-current_state.S_READ 1 0 1 
-current_state.S_PAUSE 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
-Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
-current_state.S_IDLE 0 0 0 
-current_state.S_BUFFER 1 0 1 
-current_state.S_STREAM 1 1 0 
-
-State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[0].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 
@@ -1812,7 +1054,793 @@ current_state.S_IDLE 0 0 0
 current_state.S_BUFFER 1 0 1 
 current_state.S_STREAM 1 1 0 
 
-State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[1].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[2].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[3].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[4].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[5].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|gaussian_pyramid:u_gaussian_pyramid|gaussian_filter:PYRAMID[4].u_gaussian_filter|lin_buff:u_lin_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[3].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|detection_window:u_detection_window|lin_buff:block_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[2].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|norm_block:u_norm_block|lin_buff:cell_line_buffer|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[5].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[4].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[3].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[2].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[1].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[7].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[6].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[5].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[4].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[3].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|cell_histogram:u_cell_histogram|lin_buff:cell_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[0].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:FIFO_BLK[0].line_buff|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|custom_fifo:first_line|current_state
+Name current_state.S_DISABLE current_state.S_PAUSE current_state.S_READ 
+current_state.S_DISABLE 0 0 0 
+current_state.S_READ 1 0 1 
+current_state.S_PAUSE 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[2].shiftreg|current_state
+Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
+current_state.S_IDLE 0 0 0 
+current_state.S_BUFFER 1 0 1 
+current_state.S_STREAM 1 1 0 
+
+State Machine - |DE1_SoC_Default|top:hog_top|hog:HOG[5].u_hog|binning:u_binning|lin_buff:image_line_buff|kernel:kernel_block|kernel_shiftreg:KERNEL_SHIFTREGS[1].shiftreg|current_state
 Name current_state.S_IDLE current_state.S_STREAM current_state.S_BUFFER 
 current_state.S_IDLE 0 0 0 
 current_state.S_BUFFER 1 0 1 

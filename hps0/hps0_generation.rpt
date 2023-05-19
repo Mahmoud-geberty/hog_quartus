@@ -6,21 +6,37 @@ Progress: Adding bridge_0 [altera_up_avalon_to_external_bus_bridge 18.0]
 Progress: Parameterizing module bridge_0
 Progress: Adding clk_0 [clock_source 22.1]
 Progress: Parameterizing module clk_0
+Progress: Adding hog_in [altera_avalon_pio 22.1]
+Progress: Parameterizing module hog_in
+Progress: Adding hog_out [altera_avalon_pio 22.1]
+Progress: Parameterizing module hog_out
 Progress: Adding hps_0 [altera_hps 22.1]
 Progress: Parameterizing module hps_0
+Progress: Adding input_pixel [altera_avalon_pio 22.1]
+Progress: Parameterizing module input_pixel
+Progress: Adding switch_out [altera_avalon_pio 22.1]
+Progress: Parameterizing module switch_out
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: hps0.hog_in: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps0.hog_out: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: hps0.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: hps0.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: hps0.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: hps0.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps0.input_pixel: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps0.switch_out: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Warning: hps0.bridge_0: Interrupt sender bridge_0.interrupt is not connected to an interrupt receiver
 Info: hps0: Generating hps0 "hps0" for SIM_VERILOG
 Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave bridge_0.avalon_slave because the master is of type axi and the slave is of type avalon.
 Info: bridge_0: Starting Generation of Avalon to External Bus Bridge
 Info: bridge_0: "hps0" instantiated altera_up_avalon_to_external_bus_bridge "bridge_0"
+Info: hog_in: Starting RTL generation for module 'hps0_hog_in'
+Info: hog_in:   Generation command is [exec /home/mahmoud/intelFPGA_lite/22.1std/quartus/linux64/perl/bin/perl -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/linux64/perl/lib -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/sopc_builder/bin/europa -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/sopc_builder/bin -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/common -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps0_hog_in --dir=/tmp/alt9496_3592063642948440541.dir/0003_hog_in_gen/ --quartus_dir=/home/mahmoud/intelFPGA_lite/22.1std/quartus --verilog --config=/tmp/alt9496_3592063642948440541.dir/0003_hog_in_gen//hps0_hog_in_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt9496_3592063642948440541.dir/0003_hog_in_gen/  ]
+Info: hog_in: Done RTL generation for module 'hps0_hog_in'
+Info: hog_in: "hps0" instantiated altera_avalon_pio "hog_in"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
@@ -29,6 +45,11 @@ Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely,
 Info: hps_0: "hps0" instantiated altera_hps "hps_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "hps0" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "hps0" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: rst_controller: "hps0" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
@@ -46,6 +67,18 @@ Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "r
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/verbosity_pkg.sv
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/avalon_utilities_pkg.sv
@@ -55,26 +88,27 @@ Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submod
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_avalon_clock_source.sv
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/submodules/altera_avalon_reset_source.sv
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: hps0: Done "hps0" with 21 modules, 47 files
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: hps0: Done "hps0" with 32 modules, 59 files
 Info: qsys-generate succeeded.
 Info: Finished: Create simulation model
 Info: Starting: Create Modelsim Project.
 Info: sim-script-gen --spd=/home/mahmoud/Documents/hog/quart_proj/hps0/hps0.spd --output-directory=/home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=/home/mahmoud/Documents/hog/quart_proj/hps0/hps0.spd --output-directory=/home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ --use-relative-paths=true
-Info: Generating the following file(s) for VCSMX simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
-Info: 	synopsys/vcsmx/synopsys_sim.setup
-Info: 	synopsys/vcsmx/vcsmx_setup.sh
-Info: Generating the following file(s) for MODELSIM simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
-Info: 	mentor/msim_setup.tcl
 Info: Generating the following file(s) for RIVIERA simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
 Info: 	aldec/rivierapro_setup.tcl
-Info: Generating the following file(s) for VCS simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
-Info: 	synopsys/vcs/vcs_setup.sh
 Info: Generating the following file(s) for XCELIUM simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
 Info: 	xcelium/cds.lib
 Info: 	xcelium/hdl.var
 Info: 	xcelium/xcelium_setup.sh
-Info: 	21 .cds.lib files in xcelium/cds_libs/ directory
+Info: 	24 .cds.lib files in xcelium/cds_libs/ directory
+Info: Generating the following file(s) for VCSMX simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for VCS simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for MODELSIM simulator in /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/mahmoud/Documents/hog/quart_proj/hps0/simulation/.
 Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
 Info: Finished: Create Modelsim Project.
@@ -87,21 +121,37 @@ Progress: Adding bridge_0 [altera_up_avalon_to_external_bus_bridge 18.0]
 Progress: Parameterizing module bridge_0
 Progress: Adding clk_0 [clock_source 22.1]
 Progress: Parameterizing module clk_0
+Progress: Adding hog_in [altera_avalon_pio 22.1]
+Progress: Parameterizing module hog_in
+Progress: Adding hog_out [altera_avalon_pio 22.1]
+Progress: Parameterizing module hog_out
 Progress: Adding hps_0 [altera_hps 22.1]
 Progress: Parameterizing module hps_0
+Progress: Adding input_pixel [altera_avalon_pio 22.1]
+Progress: Parameterizing module input_pixel
+Progress: Adding switch_out [altera_avalon_pio 22.1]
+Progress: Parameterizing module switch_out
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Info: hps0.hog_in: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps0.hog_out: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Info: hps0.hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: hps0.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
 Warning: hps0.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
 Warning: hps0.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps0.input_pixel: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: hps0.switch_out: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
 Warning: hps0.bridge_0: Interrupt sender bridge_0.interrupt is not connected to an interrupt receiver
 Info: hps0: Generating hps0 "hps0" for QUARTUS_SYNTH
 Info: Interconnect is inserted between master hps_0.h2f_axi_master and slave bridge_0.avalon_slave because the master is of type axi and the slave is of type avalon.
 Info: bridge_0: Starting Generation of Avalon to External Bus Bridge
 Info: bridge_0: "hps0" instantiated altera_up_avalon_to_external_bus_bridge "bridge_0"
+Info: hog_in: Starting RTL generation for module 'hps0_hog_in'
+Info: hog_in:   Generation command is [exec /home/mahmoud/intelFPGA_lite/22.1std/quartus/linux64/perl/bin/perl -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/linux64/perl/lib -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/sopc_builder/bin/europa -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/sopc_builder/bin -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/common -I /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- /home/mahmoud/intelFPGA_lite/22.1std/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hps0_hog_in --dir=/tmp/alt9496_3592063642948440541.dir/0029_hog_in_gen/ --quartus_dir=/home/mahmoud/intelFPGA_lite/22.1std/quartus --verilog --config=/tmp/alt9496_3592063642948440541.dir/0029_hog_in_gen//hps0_hog_in_component_configuration.pl  --do_build_sim=0  ]
+Info: hog_in: Done RTL generation for module 'hps0_hog_in'
+Info: hog_in: "hps0" instantiated altera_avalon_pio "hog_in"
 Info: hps_0: "Running  for module: hps_0"
 Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
 Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
@@ -110,6 +160,11 @@ Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely,
 Info: hps_0: "hps0" instantiated altera_hps "hps_0"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "hps0" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_1: "hps0" instantiated altera_mm_interconnect "mm_interconnect_1"
 Info: rst_controller: "hps0" instantiated altera_reset_controller "rst_controller"
 Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
 Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
@@ -127,8 +182,21 @@ Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "r
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
 Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_1" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_1" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file /home/mahmoud/Documents/hog/quart_proj/hps0/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_1" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: border: "hps_io" instantiated altera_interface_generator "border"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: hps0: Done "hps0" with 21 modules, 77 files
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: hps0: Done "hps0" with 32 modules, 89 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

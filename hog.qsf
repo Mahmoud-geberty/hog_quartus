@@ -865,6 +865,11 @@ set_instance_assignment -name ENABLE_BENEFICIAL_SKEW_OPTIMIZATION_FOR_NON_GLOBAL
 set_instance_assignment -name PLL_COMPENSATION_MODE DIRECT -to u0|hps_0|hps_io|border|hps_sdram_inst|pll0|fbout
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_global_assignment -name VERILOG_FILE ../de1/src/sys_status.v
 set_global_assignment -name QIP_FILE PLL_IP.qip
 set_global_assignment -name VERILOG_FILE PLL_IP/PLL_IP_0002.v -library PLL_IP
 set_global_assignment -name QIP_FILE PLL_IP/PLL_IP_0002.qip -library PLL_IP
@@ -920,8 +925,4 @@ set_global_assignment -name VERILOG_FILE ../hog_core/src/custom_fifo.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/cell_histogram.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/binning.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/abs.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

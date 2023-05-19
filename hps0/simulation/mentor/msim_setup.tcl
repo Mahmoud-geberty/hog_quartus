@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 22.1 917 linux 2023.05.16.20:34:16
+# ACDS 22.1 917 linux 2023.05.18.17:49:55
 
 # ----------------------------------------
 # Initialize variables
@@ -184,12 +184,14 @@ ensure_lib                                      ./libraries/cmd_mux/
 vmap       cmd_mux                              ./libraries/cmd_mux/                             
 ensure_lib                                      ./libraries/cmd_demux/                           
 vmap       cmd_demux                            ./libraries/cmd_demux/                           
-ensure_lib                                      ./libraries/bridge_0_avalon_slave_burst_adapter/ 
-vmap       bridge_0_avalon_slave_burst_adapter  ./libraries/bridge_0_avalon_slave_burst_adapter/ 
+ensure_lib                                      ./libraries/hps_0_h2f_lw_axi_master_wr_limiter/  
+vmap       hps_0_h2f_lw_axi_master_wr_limiter   ./libraries/hps_0_h2f_lw_axi_master_wr_limiter/  
 ensure_lib                                      ./libraries/router_002/                          
 vmap       router_002                           ./libraries/router_002/                          
 ensure_lib                                      ./libraries/router/                              
 vmap       router                               ./libraries/router/                              
+ensure_lib                                      ./libraries/bridge_0_avalon_slave_burst_adapter/ 
+vmap       bridge_0_avalon_slave_burst_adapter  ./libraries/bridge_0_avalon_slave_burst_adapter/ 
 ensure_lib                                      ./libraries/bridge_0_avalon_slave_agent_rsp_fifo/
 vmap       bridge_0_avalon_slave_agent_rsp_fifo ./libraries/bridge_0_avalon_slave_agent_rsp_fifo/
 ensure_lib                                      ./libraries/bridge_0_avalon_slave_agent/         
@@ -204,10 +206,14 @@ ensure_lib                                      ./libraries/fpga_interfaces/
 vmap       fpga_interfaces                      ./libraries/fpga_interfaces/                     
 ensure_lib                                      ./libraries/rst_controller/                      
 vmap       rst_controller                       ./libraries/rst_controller/                      
+ensure_lib                                      ./libraries/mm_interconnect_1/                   
+vmap       mm_interconnect_1                    ./libraries/mm_interconnect_1/                   
 ensure_lib                                      ./libraries/mm_interconnect_0/                   
 vmap       mm_interconnect_0                    ./libraries/mm_interconnect_0/                   
 ensure_lib                                      ./libraries/hps_0/                               
 vmap       hps_0                                ./libraries/hps_0/                               
+ensure_lib                                      ./libraries/hog_in/                              
+vmap       hog_in                               ./libraries/hog_in/                              
 ensure_lib                                      ./libraries/bridge_0/                            
 vmap       bridge_0                             ./libraries/bridge_0/                            
 
@@ -238,6 +244,7 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/verbosity_pkg.sv"                                                                         -work altera_common_sv_packages           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_utilities_pkg.sv"                                                                  -work altera_common_sv_packages           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/avalon_mm_pkg.sv"                                                                         -work altera_common_sv_packages           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_avalon_st_adapter_error_adapter_0.sv" -L altera_common_sv_packages -work error_adapter_0                     
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -L altera_common_sv_packages -work error_adapter_0                     
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_mm_slave_bfm.sv"                               -L altera_common_sv_packages -work border                              
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_interrupt_sink.sv"                             -L altera_common_sv_packages -work border                              
@@ -246,6 +253,19 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border_memory.sv"                          -L altera_common_sv_packages -work border                              
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border_hps_io.sv"                          -L altera_common_sv_packages -work border                              
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_hps_io_border.sv"                                 -L altera_common_sv_packages -work border                              
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_avalon_st_adapter.v"                                               -work avalon_st_adapter                   
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_rsp_mux.sv"                           -L altera_common_sv_packages -work rsp_mux                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -L altera_common_sv_packages -work rsp_mux                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_rsp_demux.sv"                         -L altera_common_sv_packages -work rsp_demux                           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_cmd_mux.sv"                           -L altera_common_sv_packages -work cmd_mux                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -L altera_common_sv_packages -work cmd_mux                             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_cmd_demux.sv"                         -L altera_common_sv_packages -work cmd_demux                           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_traffic_limiter.sv"                            -L altera_common_sv_packages -work hps_0_h2f_lw_axi_master_wr_limiter  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_reorder_memory.sv"                             -L altera_common_sv_packages -work hps_0_h2f_lw_axi_master_wr_limiter  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_sc_fifo.v"                                     -L altera_common_sv_packages -work hps_0_h2f_lw_axi_master_wr_limiter  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_avalon_st_pipeline_base.v"                            -L altera_common_sv_packages -work hps_0_h2f_lw_axi_master_wr_limiter  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_router_002.sv"                        -L altera_common_sv_packages -work router_002                          
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1_router.sv"                            -L altera_common_sv_packages -work router                              
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_avalon_st_adapter.v"                                               -work avalon_st_adapter                   
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0_rsp_mux.sv"                           -L altera_common_sv_packages -work rsp_mux                             
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/altera_merlin_arbitrator.sv"                                 -L altera_common_sv_packages -work rsp_mux                             
@@ -283,8 +303,10 @@ alias com {
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/hps0_hps_0_fpga_interfaces.sv"                               -L altera_common_sv_packages -work fpga_interfaces                     
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_controller.v"                                                                -work rst_controller                      
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/altera_reset_synchronizer.v"                                                              -work rst_controller                      
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_1.v"                                                                 -work mm_interconnect_1                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_mm_interconnect_0.v"                                                                 -work mm_interconnect_0                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_hps_0.v"                                                                             -work hps_0                               
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_hog_in.v"                                                                            -work hog_in                              
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/hps0_bridge_0.v"                                                                          -work bridge_0                            
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/hps0.v"                                                                                                                                        
 }
@@ -293,14 +315,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L border -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L bridge_0_avalon_slave_burst_adapter -L router_002 -L router -L bridge_0_avalon_slave_agent_rsp_fifo -L bridge_0_avalon_slave_agent -L hps_0_h2f_axi_master_agent -L bridge_0_avalon_slave_translator -L hps_io -L fpga_interfaces -L rst_controller -L mm_interconnect_0 -L hps_0 -L bridge_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L border -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L hps_0_h2f_lw_axi_master_wr_limiter -L router_002 -L router -L bridge_0_avalon_slave_burst_adapter -L bridge_0_avalon_slave_agent_rsp_fifo -L bridge_0_avalon_slave_agent -L hps_0_h2f_axi_master_agent -L bridge_0_avalon_slave_translator -L hps_io -L fpga_interfaces -L rst_controller -L mm_interconnect_1 -L mm_interconnect_0 -L hps_0 -L hog_in -L bridge_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with -voptargs=+acc option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L border -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L bridge_0_avalon_slave_burst_adapter -L router_002 -L router -L bridge_0_avalon_slave_agent_rsp_fifo -L bridge_0_avalon_slave_agent -L hps_0_h2f_axi_master_agent -L bridge_0_avalon_slave_translator -L hps_io -L fpga_interfaces -L rst_controller -L mm_interconnect_0 -L hps_0 -L bridge_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -voptargs=+acc -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L border -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L hps_0_h2f_lw_axi_master_wr_limiter -L router_002 -L router -L bridge_0_avalon_slave_burst_adapter -L bridge_0_avalon_slave_agent_rsp_fifo -L bridge_0_avalon_slave_agent -L hps_0_h2f_axi_master_agent -L bridge_0_avalon_slave_translator -L hps_io -L fpga_interfaces -L rst_controller -L mm_interconnect_1 -L mm_interconnect_0 -L hps_0 -L hog_in -L bridge_0 -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

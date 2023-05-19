@@ -54,12 +54,13 @@ preplace inst hps0.hps_0.dma -pg 1
 preplace inst hps0.hps_0.eosc2 -pg 1
 preplace inst hps0.hps_0.hps_io.border -pg 1
 preplace inst hps0.hps_0.fpga_interfaces -pg 1
-preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)clk_0.clk_in,(SLAVE)hps0.clk) 1 0 1 NJ
-preplace netloc POINT_TO_POINT<net_container>hps0</net_container>(MASTER)clk_0.clk_reset,(SLAVE)bridge_0.reset) 1 1 2 290 120 NJ
-preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)hps0.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)hps0.bridge_0,(SLAVE)bridge_0.external_interface) 1 0 3 NJ 80 NJ 80 NJ
-preplace netloc FAN_OUT<net_container>hps0</net_container>(SLAVE)bridge_0.clk,(SLAVE)hps_0.h2f_axi_clock,(MASTER)clk_0.clk,(SLAVE)hps_0.f2h_axi_clock,(SLAVE)hps_0.h2f_lw_axi_clock) 1 1 2 270 60 NJ
-preplace netloc POINT_TO_POINT<net_container>hps0</net_container>(MASTER)hps_0.h2f_axi_master,(SLAVE)bridge_0.avalon_slave) 1 2 1 600
+preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)bridge_0.external_interface,(SLAVE)hps0.bridge_0) 1 0 3 NJ 80 NJ 80 NJ
+preplace netloc FAN_OUT<net_container>hps0</net_container>(SLAVE)hps_0.f2h_axi_clock,(SLAVE)bridge_0.clk,(SLAVE)hps_0.h2f_lw_axi_clock,(SLAVE)hps_0.h2f_axi_clock,(MASTER)clk_0.clk) 1 1 2 290 1700 600
+preplace netloc POINT_TO_POINT<net_container>hps0</net_container>(MASTER)hps_0.h2f_axi_master,(SLAVE)bridge_0.avalon_slave) 1 2 1 620
+preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)hps0.reset) 1 0 1 NJ
 preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)hps0.memory,(SLAVE)hps_0.memory) 1 0 2 NJ 1890 NJ
-levelinfo -pg 1 0 60 810
-levelinfo -hier hps0 70 100 410 650 800
+preplace netloc POINT_TO_POINT<net_container>hps0</net_container>(SLAVE)bridge_0.reset,(MASTER)clk_0.clk_reset) 1 1 2 NJ 1720 640
+preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)hps0.hps_io,(SLAVE)hps_0.hps_io) 1 0 2 NJ 1850 NJ
+preplace netloc EXPORT<net_container>hps0</net_container>(SLAVE)hps0.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+levelinfo -pg 1 0 60 830
+levelinfo -hier hps0 70 100 410 670 820

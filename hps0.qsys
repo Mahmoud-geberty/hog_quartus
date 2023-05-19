@@ -26,7 +26,7 @@
    {
       datum baseAddress
       {
-         value = "448";
+         value = "0";
          type = "String";
       }
    }
@@ -36,6 +36,48 @@
       {
          value = "0";
          type = "int";
+      }
+   }
+   element hog_in
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element hog_in.s1
+   {
+      datum baseAddress
+      {
+         value = "48";
+         type = "String";
+      }
+   }
+   element hog_out
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element hog_out.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
       }
    }
    element hps_0
@@ -51,6 +93,48 @@
       datum baseAddress
       {
          value = "0";
+         type = "String";
+      }
+   }
+   element input_pixel
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element input_pixel.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element switch_out
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element switch_out.s1
+   {
+      datum baseAddress
+      {
+         value = "16";
          type = "String";
       }
    }
@@ -81,10 +165,30 @@
    type="conduit"
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface
+   name="hog_in"
+   internal="hog_in.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="hog_out"
+   internal="hog_out.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="hps_0_h2f_mpu_events" internal="hps_0.h2f_mpu_events" />
  <interface name="hps_io" internal="hps_0.hps_io" type="conduit" dir="end" />
+ <interface
+   name="input_pixel"
+   internal="input_pixel.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="memory" internal="hps_0.memory" type="conduit" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="switch_out"
+   internal="switch_out.external_connection"
+   type="conduit"
+   dir="end" />
  <module
    name="bridge_0"
    kind="altera_up_avalon_to_external_bus_bridge"
@@ -101,6 +205,34 @@
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module name="hog_in" kind="altera_avalon_pio" version="22.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="140000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="hog_out" kind="altera_avalon_pio" version="22.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="140000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
  </module>
  <module name="hps_0" kind="altera_hps" version="22.1" enabled="1">
   <parameter name="ABSTRACT_REAL_COMPARE_TEST" value="false" />
@@ -632,16 +764,88 @@
   <parameter name="usb_mp_clk_div" value="0" />
   <parameter name="use_default_mpu_clk" value="true" />
  </module>
+ <module
+   name="input_pixel"
+   kind="altera_avalon_pio"
+   version="22.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="140000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module name="switch_out" kind="altera_avalon_pio" version="22.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="true" />
+  <parameter name="clockRate" value="140000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
  <connection
    kind="avalon"
    version="22.1"
    start="hps_0.h2f_axi_master"
    end="bridge_0.avalon_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01c0" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="22.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="hog_in.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="22.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="hog_out.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="22.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="switch_out.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="22.1"
+   start="hps_0.h2f_lw_axi_master"
+   end="input_pixel.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="22.1" start="clk_0.clk" end="bridge_0.clk" />
+ <connection kind="clock" version="22.1" start="clk_0.clk" end="hog_in.clk" />
+ <connection kind="clock" version="22.1" start="clk_0.clk" end="hog_out.clk" />
+ <connection kind="clock" version="22.1" start="clk_0.clk" end="switch_out.clk" />
+ <connection kind="clock" version="22.1" start="clk_0.clk" end="input_pixel.clk" />
  <connection
    kind="clock"
    version="22.1"
@@ -662,6 +866,26 @@
    version="22.1"
    start="clk_0.clk_reset"
    end="bridge_0.reset" />
+ <connection
+   kind="reset"
+   version="22.1"
+   start="clk_0.clk_reset"
+   end="input_pixel.reset" />
+ <connection
+   kind="reset"
+   version="22.1"
+   start="clk_0.clk_reset"
+   end="switch_out.reset" />
+ <connection
+   kind="reset"
+   version="22.1"
+   start="clk_0.clk_reset"
+   end="hog_out.reset" />
+ <connection
+   kind="reset"
+   version="22.1"
+   start="clk_0.clk_reset"
+   end="hog_in.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

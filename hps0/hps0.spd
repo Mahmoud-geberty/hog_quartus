@@ -16,6 +16,10 @@
    library="altera_common_sv_packages"
    systemVerilogPackageName="avalon_vip_avalon_mm_pkg" />
  <file
+   path="simulation/submodules/hps0_mm_interconnect_1_avalon_st_adapter_error_adapter_0.sv"
+   type="SYSTEM_VERILOG"
+   library="error_adapter_0" />
+ <file
    path="simulation/submodules/hps0_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv"
    type="SYSTEM_VERILOG"
    library="error_adapter_0" />
@@ -47,6 +51,58 @@
    path="simulation/submodules/hps0_hps_0_hps_io_border.sv"
    type="SYSTEM_VERILOG"
    library="border" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_avalon_st_adapter.v"
+   type="VERILOG"
+   library="avalon_st_adapter" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_rsp_mux.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_mux" />
+ <file
+   path="simulation/submodules/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_mux" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_rsp_demux.sv"
+   type="SYSTEM_VERILOG"
+   library="rsp_demux" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_cmd_mux.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux" />
+ <file
+   path="simulation/submodules/altera_merlin_arbitrator.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_mux" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_cmd_demux.sv"
+   type="SYSTEM_VERILOG"
+   library="cmd_demux" />
+ <file
+   path="simulation/submodules/altera_merlin_traffic_limiter.sv"
+   type="SYSTEM_VERILOG"
+   library="hps_0_h2f_lw_axi_master_wr_limiter" />
+ <file
+   path="simulation/submodules/altera_merlin_reorder_memory.sv"
+   type="SYSTEM_VERILOG"
+   library="hps_0_h2f_lw_axi_master_wr_limiter" />
+ <file
+   path="simulation/submodules/altera_avalon_sc_fifo.v"
+   type="SYSTEM_VERILOG"
+   library="hps_0_h2f_lw_axi_master_wr_limiter" />
+ <file
+   path="simulation/submodules/altera_avalon_st_pipeline_base.v"
+   type="SYSTEM_VERILOG"
+   library="hps_0_h2f_lw_axi_master_wr_limiter" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_router_002.sv"
+   type="SYSTEM_VERILOG"
+   library="router_002" />
+ <file
+   path="simulation/submodules/hps0_mm_interconnect_1_router.sv"
+   type="SYSTEM_VERILOG"
+   library="router" />
  <file
    path="simulation/submodules/hps0_mm_interconnect_0_avalon_st_adapter.v"
    type="VERILOG"
@@ -200,6 +256,10 @@
    type="SDC"
    library="rst_controller" />
  <file
+   path="simulation/submodules/hps0_mm_interconnect_1.v"
+   type="VERILOG"
+   library="mm_interconnect_1" />
+ <file
    path="simulation/submodules/hps0_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
@@ -207,6 +267,10 @@
    path="simulation/submodules/hps0_hps_0.v"
    type="VERILOG"
    library="hps_0" />
+ <file
+   path="simulation/submodules/hps0_hog_in.v"
+   type="VERILOG"
+   library="hog_in" />
  <file
    path="simulation/submodules/hps0_bridge_0.v"
    type="VERILOG"

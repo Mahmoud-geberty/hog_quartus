@@ -1,0 +1,3 @@
+<FlashFPGA2Linux>
+   <board set_ip="192.168.0.31" set_user="root" set_pw="eit" set_flashBoot="Y" set_quartus_prime_ver="L22.1" />
+</FlashFPGA2Linux>
