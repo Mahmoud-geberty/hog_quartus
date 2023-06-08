@@ -869,10 +869,11 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 
+set_global_assignment -name POWER_USE_INPUT_FILES OFF
+set_global_assignment -name VERILOG_FILE ../de1/src/sync_async_reset.v
+set_global_assignment -name VERILOG_FILE ../de1/src/hog_de1_wrapper.v
 set_global_assignment -name VERILOG_FILE ../de1/src/sys_status.v
 set_global_assignment -name QIP_FILE PLL_IP.qip
-set_global_assignment -name VERILOG_FILE PLL_IP/PLL_IP_0002.v -library PLL_IP
-set_global_assignment -name QIP_FILE PLL_IP/PLL_IP_0002.qip -library PLL_IP
 set_global_assignment -name QIP_FILE hps0/synthesis/hps0.qip
 set_global_assignment -name VERILOG_FILE ../de1/src/bus_switch.v
 set_global_assignment -name VERILOG_FILE ../de1/src/window_serializer.v
@@ -903,7 +904,6 @@ set_global_assignment -name VERILOG_FILE ../de1/IP/fifomem_dp.v
 set_global_assignment -name VERILOG_FILE ../de1/IP/fifomem.v
 set_global_assignment -name VERILOG_FILE ../de1/IP/async_fifo.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/true_dual_port.v
-set_global_assignment -name VERILOG_FILE ../hog_core/src/top_wrapper.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/top.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/row_histogram.v
 set_global_assignment -name VERILOG_FILE ../hog_core/src/partial_histogram_add.v

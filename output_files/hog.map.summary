@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Thu May 18 18:48:36 2023
+Analysis & Synthesis Status : Successful - Wed Jun  7 00:09:41 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : hog
 Top-level Entity Name : DE1_SoC_Default
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 8975
+Total registers : 22498
 Total pins : 366
 Total virtual pins : 0
-Total block memory bits : 159,616
-Total DSP Blocks : 4
+Total block memory bits : 1,031,212
+Total DSP Blocks : 28
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

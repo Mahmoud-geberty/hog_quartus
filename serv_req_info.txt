@@ -6,3 +6,11 @@
 	<version>Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition</version>
 </internal_error>
 
+<internal_error>
+	<executable>quartus</executable>
+	<sub_system>MEM</sub_system>
+	<error>*** Fatal Error: Out of memory in module quartus (1041 megabytes used)</error>
+	<date>Sun May 28 08:27:27 2023</date>
+	<version>Version 22.1std.1 Build 917 02/14/2023 SC Lite Edition</version>
+</internal_error>
+

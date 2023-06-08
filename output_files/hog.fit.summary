@@ -1,17 +1,17 @@
-Fitter Status : Successful - Thu May 18 18:59:58 2023
+Fitter Status : Successful - Wed Jun  7 00:27:38 2023
 Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
 Revision Name : hog
 Top-level Entity Name : DE1_SoC_Default
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 5,380 / 32,070 ( 17 % )
-Total registers : 8445
+Logic utilization (in ALMs) : 16,641 / 32,070 ( 52 % )
+Total registers : 17334
 Total pins : 366 / 457 ( 80 % )
 Total virtual pins : 0
-Total block memory bits : 159,616 / 4,065,280 ( 4 % )
-Total RAM Blocks : 63 / 397 ( 16 % )
-Total DSP Blocks : 4 / 87 ( 5 % )
+Total block memory bits : 1,031,212 / 4,065,280 ( 25 % )
+Total RAM Blocks : 329 / 397 ( 83 % )
+Total DSP Blocks : 28 / 87 ( 32 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

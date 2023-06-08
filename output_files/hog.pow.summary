@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Mon May 29 07:16:36 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : hog
+Top-level Entity Name : DE1_SoC_Default
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Power Models : Final
+Total Thermal Power Dissipation : 647.23 mW
+Core Dynamic Thermal Power Dissipation : 168.39 mW
+Core Static Thermal Power Dissipation : 419.09 mW
+I/O Thermal Power Dissipation : 59.75 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data

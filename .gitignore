@@ -1,1 +1,4 @@
 socfpgaPlatformGenerator/
+*.dts
+*.dtb
+software/

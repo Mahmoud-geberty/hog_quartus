@@ -81,13 +81,13 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 -------------------------------------------------------------------------------------------------------------
 GND                          : A2        : gnd    :                   :         :           :                
 TD_VS                        : A3        : input  : 3.3-V LVTTL       :         : 8A        : Y              
-HPS_SPIM_SS                  : A4        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+HPS_FLASH_DATA[3]            : A4        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 TD_HS                        : A5        : input  : 3.3-V LVTTL       :         : 8A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A6        :        :                   :         : 8A        :                
+HPS_FLASH_NCSO               : A6        : output : 3.3-V LVTTL       :         : 8A        : N              
 VCCIO8A                      : A7        : power  :                   : 3.3V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8A        :                
-HPS_I2C2_SDAT                : A9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : A10       :        :                   :         : 8A        :                
+HPS_LED                      : A9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+HPS_KEY                      : A10       : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 VGA_CLK                      : A11       : output : 3.3-V LVTTL       :         : 8A        : Y              
 GND                          : A12       : gnd    :                   :         :           :                
 VGA_R[0]                     : A13       : output : 3.3-V LVTTL       :         : 8A        : Y              
@@ -260,11 +260,11 @@ VCCIO5B                      : AE30      : power  :                   : 3.3V    
 GND                          : AF1       : gnd    :                   :         :           :                
 GND                          : AF2       : gnd    :                   :         :           :                
 GND                          : AF3       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3A        :                
+HPS_SPIM_SS                  : AF4       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AF5       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF6       :        :                   :         : 3A        :                
+HPS_I2C2_SCLK                : AF6       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
 VCCIO3A                      : AF7       : power  :                   : 3.3V    : 3A        :                
-HPS_I2C1_SCLK                : AF8       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
+HPS_I2C1_SDAT                : AF8       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
 SW[2]                        : AF9       : input  : 3.3-V LVTTL       :         : 3A        : Y              
 SW[3]                        : AF10      : input  : 3.3-V LVTTL       :         : 3A        : Y              
 DRAM_CAS_N                   : AF11      : output : 3.3-V LVTTL       :         : 3B        : Y              
@@ -291,9 +291,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG1       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG2       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG3       :        :                   :         : 3A        :                
 VCCIO3A                      : AG4       : power  :                   : 3.3V    : 3A        :                
-HPS_SPIM_MOSI                : AG5       : output : 3.3-V LVTTL       :         : 3A        : N              
-HPS_FLASH_DATA[1]            : AG6       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
-HPS_I2C2_SCLK                : AG7       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
+HPS_FLASH_DCLK               : AG5       : output : 3.3-V LVTTL       :         : 3A        : N              
+HPS_SPIM_MOSI                : AG6       : output : 3.3-V LVTTL       :         : 3A        : N              
+HPS_FLASH_DATA[0]            : AG7       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
 DRAM_DQ[5]                   : AG10      : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
@@ -318,10 +318,10 @@ HEX0[5]                      : AG28      : output : 3.3-V LVTTL       :         
 VCCIO5A                      : AG29      : power  :                   : 3.3V    : 5A        :                
 HEX1[3]                      : AG30      : output : 3.3-V LVTTL       :         : 5A        : Y              
 GND                          : AH1       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH2       :        :                   :         : 3A        :                
-HPS_FLASH_NCSO               : AH3       : output : 3.3-V LVTTL       :         : 3A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH4       :        :                   :         : 3A        :                
-HPS_ENET_RX_DATA[3]          : AH5       : input  : 3.3-V LVTTL       :         : 3A        : N              
+HPS_ENET_INT_N               : AH2       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH3       :        :                   :         : 3A        :                
+HPS_SPIM_CLK                 : AH4       : output : 3.3-V LVTTL       :         : 3A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH5       :        :                   :         : 3A        :                
 GND                          : AH6       : gnd    :                   :         :           :                
 DRAM_DQ[13]                  : AH7       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
 DRAM_DQ[12]                  : AH8       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
@@ -347,10 +347,10 @@ GPIO_1[12]                   : AH27      : bidir  : 3.3-V LVTTL       :         
 HEX0[6]                      : AH28      : output : 3.3-V LVTTL       :         : 5A        : Y              
 HEX1[1]                      : AH29      : output : 3.3-V LVTTL       :         : 5A        : Y              
 HEX1[2]                      : AH30      : output : 3.3-V LVTTL       :         : 5A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ1       :        :                   :         : 3A        :                
+HPS_I2C_CONTROL              : AJ1       : bidir  : 3.3-V LVTTL       :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ2       :        :                   :         : 3A        :                
 GND                          : AJ3       : gnd    :                   :         :           :                
-HPS_SPIM_MISO                : AJ4       : input  : 3.3-V LVTTL       :         : 3B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ4       :        :                   :         : 3B        :                
 DRAM_DQ[15]                  : AJ5       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
 DRAM_DQ[14]                  : AJ6       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
 DRAM_DQ[1]                   : AJ7       : bidir  : 3.3-V LVTTL       :         : 3B        : Y              
@@ -411,8 +411,8 @@ TD_DATA[7]                   : B3        : input  : 3.3-V LVTTL       :         
 VCCIO8A                      : B4        : power  :                   : 3.3V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8A        :                
-HPS_FLASH_DATA[0]            : B7        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8A        :                
+HPS_I2C1_SCLK                : B8        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 GND                          : B9        : gnd    :                   :         :           :                
 VREFB8AN0                    : B10       : power  :                   :         : 8A        :                
 VGA_HS                       : B11       : output : 3.3-V LVTTL       :         : 8A        : Y              
@@ -437,12 +437,12 @@ GND                          : B29       : gnd    :                   :         
 HPS_DDR3_ADDR[12]            : B30       : output : SSTL-15 Class I   :         : 6A        : N              
 GND                          : C1        : gnd    :                   :         :           :                
 TD_DATA[6]                   : C2        : input  : 3.3-V LVTTL       :         : 8A        : Y              
-HPS_SPIM_CLK                 : C3        : output : 3.3-V LVTTL       :         : 8A        : N              
-HPS_FLASH_DATA[3]            : C4        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C3        :        :                   :         : 8A        :                
+HPS_GSENSOR_INT              : C4        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : C5        :        :                   :         : 8A        :                
 GND                          : C6        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C7        :        :                   :         : 8A        :                
-HPS_KEY                      : C8        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C8        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C9        :        :                   :         : 8A        :                
 VGA_SYNC_N                   : C10       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VCCIO8A                      : C11       : power  :                   : 3.3V    : 8A        :                
@@ -468,13 +468,13 @@ HPS_DDR3_ADDR[11]            : C30       : output : SSTL-15 Class I   :         
 TD_DATA[4]                   : D1        : input  : 3.3-V LVTTL       :         : 8A        : Y              
 TD_DATA[0]                   : D2        : input  : 3.3-V LVTTL       :         : 8A        : Y              
 GND                          : D3        : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 8A        :                
-HPS_GSENSOR_INT              : D5        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
-HPS_I2C_CONTROL              : D6        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+HPS_SPIM_MISO                : D4        : input  : 3.3-V LVTTL       :         : 8A        : N              
+HPS_ENET_RX_DATA[3]          : D5        : input  : 3.3-V LVTTL       :         : 8A        : N              
+HPS_FLASH_DATA[1]            : D6        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D7        :        :                   :         : 8A        :                
 VCCIO8A                      : D8        : power  :                   : 3.3V    : 8A        :                
-HPS_ENET_INT_N               : D9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
-HPS_FLASH_DCLK               : D10       : output : 3.3-V LVTTL       :         : 8A        : N              
+HPS_CONV_USB_N               : D9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D10       :        :                   :         : 8A        :                
 VGA_VS                       : D11       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VGA_R[5]                     : D12       : output : 3.3-V LVTTL       :         : 8A        : Y              
 GND                          : D13       : gnd    :                   :         :           :                
@@ -498,12 +498,12 @@ HPS_DDR3_RAS_N               : D30       : output : SSTL-15 Class I   :         
 TD_DATA[5]                   : E1        : input  : 3.3-V LVTTL       :         : 8A        : Y              
 TD_DATA[2]                   : E2        : input  : 3.3-V LVTTL       :         : 8A        : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 8A        :                
+HPS_FLASH_DATA[2]            : E4        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 VCCIO8A                      : E5        : power  :                   : 3.3V    : 8A        :                
-HPS_FLASH_DATA[2]            : E6        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E6        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E7        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E8        :        :                   :         : 8A        :                
-HPS_CONV_USB_N               : E9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E9        :        :                   :         : 8A        :                
 GND                          : E10       : gnd    :                   :         :           :                
 VGA_G[7]                     : E11       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VGA_R[6]                     : E12       : output : 3.3-V LVTTL       :         : 8A        : Y              
@@ -532,8 +532,8 @@ nSTATUS                      : F4        :        :                   :         
 GND                          : F5        : gnd    :                   :         :           :                
 TD_RESET_N                   : F6        : output : 3.3-V LVTTL       :         : 8A        : Y              
 GND                          : F7        : gnd    :                   :         :           :                
-HPS_LED                      : F8        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
-HPS_I2C1_SDAT                : F9        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F8        :        :                   :         : 8A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F9        :        :                   :         : 8A        :                
 VGA_BLANK_N                  : F10       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VGA_G[6]                     : F11       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VCCIO8A                      : F12       : power  :                   : 3.3V    : 8A        :                
@@ -562,7 +562,7 @@ GND                          : G4        : gnd    :                   :         
 nCE                          : G5        :        :                   :         : 9A        :                
 MSEL2                        : G6        :        :                   :         : 9A        :                
 AUD_XCK                      : G7        : output : 3.3-V LVTTL       :         : 8A        : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : G8        :        :                   :         : 8A        :                
+HPS_I2C2_SDAT                : G8        : bidir  : 3.3-V LVTTL       :         : 8A        : N              
 VCCIO8A                      : G9        : power  :                   : 3.3V    : 8A        :                
 VGA_G[3]                     : G10       : output : 3.3-V LVTTL       :         : 8A        : Y              
 VGA_G[4]                     : G11       : output : 3.3-V LVTTL       :         : 8A        : Y              
